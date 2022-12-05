@@ -1,0 +1,38 @@
+<ul class="nav nav-tabs">
+  <li (click)="selectCategory(categoryEnum.Progress)" class="nav-item">
+    <a [ngClass]="{'active': categoryEnum.Progress === category}" class="nav-link">Progress</a>
+  </li>
+  <li (click)="selectCategory(categoryEnum.Cookie)" class="nav-item">
+    <a [ngClass]="{'active': categoryEnum.Cookie === category}" class="nav-link">Cookie</a>
+  </li>
+</ul>
+
+
+<div *ngIf="category === categoryEnum.Progress">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Level Ranking</th>
+      <th scope="col"></th>
+      <th scope="col">Affiliate username</th>
+      <th scope="col">Sales</th>
+      <th scope="col">Clicks</th>
+      <th scope="col">Advertisers that you promote (programs)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1st</th>
+      <th><img class="profileImage" [src]="user.avatar_url"/> </th>
+      <td>{{user.name}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="category === categoryEnum.Cookie">
+  <h3>Timestamp {{timestamp}}</h3>
+  <h3>Expires at {{expiry}}</h3>
+  <h3>Remaining Lifetime {{lifetime}} days</h3>
+</div>
