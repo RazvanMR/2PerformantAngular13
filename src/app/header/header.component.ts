@@ -13,7 +13,7 @@ export class HeaderComponent {
   constructor(private authService: AuthService) {}
 
   public loginUser(): void {
-    this.authService.login("nicolaeenc@gmail.com", "gapry2-heMqoh-fyrhim").pipe(take(1)).subscribe((user) => {
+    this.authService.login("", "").pipe(take(1)).subscribe((user) => {
       localStorage.setItem('access-token', <string>user.headers.get('access-token'));
       localStorage.setItem('token-type', <string>user.headers.get('token-type'));
       localStorage.setItem('client', <string>user.headers.get('client'));
